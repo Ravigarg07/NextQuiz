@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Ravigarg07/NextQuiz#readme",
+  "bugs": {
+    "url": "https://github.com/Ravigarg07/NextQuiz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ravigarg07/NextQuiz.git"
+  },
+  "license": "ISC",
+  "author": "Ravi Garg",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.17.1",
+    "nodemon": "^3.1.10"
+  }
+}

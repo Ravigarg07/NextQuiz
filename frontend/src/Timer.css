@@ -1,0 +1,25 @@
+.timer {
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  width: 130px;
+  margin: 10px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 1px;
+  border: 2px solid greenyellow;
+  padding:10px 14px;
+  font-weight:600;
+  font-size: 25px;
+  position: fixed;   /* fixes it to the screen */
+  top: 40px;            /* stick to top */
+  left: 40px;      
+}
+
+.timer.warning {
+  border: 2px solid #ff9900;
+}
+
+.timer.danger {
+  border: 2px solid #cc0000;
+}
