@@ -80,30 +80,6 @@ AI API for Question Generation
 
 ---
 
-## 📂 Project Structure (Simplified)
-
-```
-NextQuiz/
-│
-├── client/            # React frontend
-│   ├── components/
-│   ├── pages/
-│   └── services/
-│
-├── server/            # Node + Express backend
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   └── config/
-│
-├── .env
-├── package.json
-└── README.md
-```
-
----
-
 ## 🔐 Authentication Flow
 
 1. User registers / logs in
@@ -133,7 +109,6 @@ NextQuiz/
 * timeLimit
 * score
 * answers
-* createdAt
 
 ### History Schema
 
