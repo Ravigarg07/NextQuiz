@@ -5,6 +5,7 @@
 Next Quiz is a full-stack AI-powered online quiz platform that allows users to generate and attempt quizzes dynamically based on subject, topic, difficulty level, number of questions, and time limits. The platform integrates artificial intelligence for question generation, supports secure authentication using JWT, and maintains detailed user quiz history and performance analytics.
 
 This project is built using the MERN stack and is designed to provide a modern, responsive, and intelligent quiz experience.
+Live Website :- https://nextquiz-frontend.onrender.com
 
 ---
 
