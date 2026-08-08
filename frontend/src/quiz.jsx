@@ -27,9 +27,6 @@ export default function QuizSection({isQuizRunning, setIsQuizRunning}){
   let opts = joined.match(/[A-D][\).]\s.*?(?=\s*[A-D][\).]|$)/g) || [];
   options.push(opts.map(o => o.trim()));
 });
-  // console.log("Questions:", questions); 
-  // console.log("Options:", options); 
-  // console.log("Answers:", answers);
 
   const [submitAns,setSubmitAns] = useState(Array(questions.length).fill(null));
 

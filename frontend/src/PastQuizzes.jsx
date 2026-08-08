@@ -19,7 +19,6 @@ export default function PastQuizzes({isQuizRunning, setIsQuizRunning}) {
     let result = await fetch(`${url}/quiz-history/:${email}`);
     result = await result.json();
     setData(result);
-    console.log(data);
   };
   useEffect(()=>{
     history();

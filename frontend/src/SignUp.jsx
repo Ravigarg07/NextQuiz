@@ -25,7 +25,6 @@ export default function SignUp() {
       }
     })
     result = await result.json();
-    console.log(result);
     if(result.result=="Registration Successful!"){
       setUser({name:name,email:email});
       setIsLoggedin(true);
