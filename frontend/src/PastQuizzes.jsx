@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "./AuthContext.jsx";
 import { useNavigate } from "react-router";
+import {url} from "./config.js";
 
 export default function PastQuizzes({isQuizRunning, setIsQuizRunning}) {
   const { isLoggedin } = useAuth();
@@ -15,7 +16,7 @@ export default function PastQuizzes({isQuizRunning, setIsQuizRunning}) {
       return;
     }
     const email = localStorage.getItem('email');
-    let result = await fetch(`http://localhost:5000/quiz-history/:${email}`);
+    let result = await fetch(`${url}/quiz-history/:${email}`);
     result = await result.json();
     setData(result);
     console.log(data);
@@ -28,7 +29,7 @@ export default function PastQuizzes({isQuizRunning, setIsQuizRunning}) {
     setLoading(true);
     localStorage.removeItem("quiz");
     localStorage.removeItem("qize_name");
-    let result = await fetch("http://localhost:5000/regenerateQuiz",{
+    let result = await fetch(`${url}/regenerateQuiz`,{
       method:'post',
       body:JSON.stringify({topic,ques,difficulty}),
       headers: {

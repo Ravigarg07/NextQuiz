@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext.jsx";
+import {url} from "./config.js";
 
 export default function GenerateQuiz({isQuizRunning, setIsQuizRunning}) {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export default function GenerateQuiz({isQuizRunning, setIsQuizRunning}) {
       date: new Date().toLocaleDateString(),
     };
     setLoading(true);
-    let result = await fetch("http://localhost:5000/generateQuiz",{
+    let result = await fetch(`${url}/generateQuiz`,{
       method:'post',
       body:JSON.stringify(newQuiz),
       headers: {

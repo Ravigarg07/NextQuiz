@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import QuizTimer from "./Timer";
+import {url} from "./config.js";
 
 
 export default function QuizSection({isQuizRunning, setIsQuizRunning}){
@@ -26,9 +27,9 @@ export default function QuizSection({isQuizRunning, setIsQuizRunning}){
   let opts = joined.match(/[A-D][\).]\s.*?(?=\s*[A-D][\).]|$)/g) || [];
   options.push(opts.map(o => o.trim()));
 });
-  console.log("Questions:", questions); 
-  console.log("Options:", options); 
-  console.log("Answers:", answers);
+  // console.log("Questions:", questions); 
+  // console.log("Options:", options); 
+  // console.log("Answers:", answers);
 
   const [submitAns,setSubmitAns] = useState(Array(questions.length).fill(null));
 
@@ -46,7 +47,7 @@ export default function QuizSection({isQuizRunning, setIsQuizRunning}){
       if(item==submitAns[index]) marks++;
     })
     let quiz_id = localStorage.getItem("quiz_id");
-    await fetch(`http://localhost:5000/submitQuiz/${quiz_id}`,{
+    await fetch(`${url}/submitQuiz/${quiz_id}`,{
       method:'post',
       body:JSON.stringify({marks}),
       headers: {

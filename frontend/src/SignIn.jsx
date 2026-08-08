@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import {url} from "./config.js";
 
 export default function SignIn() {
   const {user,setUser,setIsLoggedin} = useAuth();
@@ -15,7 +16,7 @@ export default function SignIn() {
       alert("Please enter email and password.");
       return;
     }
-    let result = await fetch("http://localhost:5000/login",{
+    let result = await fetch(`${url}/login`,{
       method:'post',
       body:JSON.stringify({email,password}),
       headers:{

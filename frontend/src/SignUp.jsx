@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import {url} from "./config.js";
 
 export default function SignUp() {
   const {user,setUser,setIsLoggedin} = useAuth();
@@ -16,7 +17,7 @@ export default function SignUp() {
       alert("Please fill all fields.");
       return;
     }
-    let result = await fetch("http://localhost:5000/register",{
+    let result = await fetch(`${url}/register`,{
       method:'post',
       body:JSON.stringify({name,email,password}),
       headers:{
