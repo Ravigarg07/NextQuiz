@@ -45,7 +45,6 @@ app.post("/register", async (req, resp) => {
 app.post("/login", async (req, resp) => {
   try {
     let result = await User.findOne(req.body);
-    console.log(result);
     if (result) {
       resp.send({ result: "user found" ,name:result.name});
     } else {
@@ -69,12 +68,10 @@ app.post("/profileData", async (req, resp) => {
 // Generate Quiz
 app.post("/generateQuiz", async (req, res) => {
   try {
-    console.log("api start");
     const { email,name,topic,difficulty,ques,date,duration,marks } = req.body;
     const quiz = await generateQuiz(topic,difficulty,ques);
     const history = new History({email,name,topic,difficulty,ques,date,duration,marks});
     await history.save();
-    console.log(history);
     res.json({ quiz });
   } catch (error) {
     res.status(500).json({ error: error.message });

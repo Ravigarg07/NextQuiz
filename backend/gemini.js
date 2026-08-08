@@ -6,7 +6,6 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const generateQuiz = async (topic,difficulty,ques)=> {
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-  console.log(model);
   const prompt = `Generate ${ques} multiple-choice quiz questions on the topic "${topic}" with ${difficulty} level without any explainition.
   Each question should have:
   - Question text
